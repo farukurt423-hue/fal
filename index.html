@@ -3,112 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisa'ya Özel Fal ✨🔮</title>
+    <title>NİSA'YA ÖZEL FAL - ACI GERÇEKLER 🔥</title>
     <style>
         body {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
-            color: #333;
+            color: #fff;
             margin: 0;
             padding: 20px;
         }
         .container {
-            max-width: 700px;
+            max-width: 750px;
             margin: 40px auto;
-            background: rgba(255,255,255,0.9);
-            border-radius: 30px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 25px;
             padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            color: #000;
         }
         h1 {
             font-size: 3em;
-            color: #d63384;
-            text-shadow: 3px 3px #ff9a9e;
+            color: #e91e63;
+            text-shadow: 2px 2px 10px rgba(233,30,99,0.5);
         }
         input {
-            width: 80%;
-            padding: 15px;
-            font-size: 1.3em;
-            border: 3px solid #ff9a9e;
+            width: 85%;
+            padding: 18px;
+            font-size: 1.4em;
+            border: 4px solid #e91e63;
             border-radius: 15px;
             margin: 20px 0;
         }
         button {
-            background: #ff6bcb;
+            background: #e91e63;
             color: white;
-            padding: 15px 40px;
-            font-size: 1.5em;
+            padding: 18px 50px;
+            font-size: 1.6em;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(255,107,203,0.4);
+            transition: all 0.3s;
         }
-        button:hover { background: #d63384; transform: scale(1.1); }
+        button:hover { background: #c2185b; transform: scale(1.1); }
         #result {
             margin-top: 40px;
-            font-size: 1.8em;
-            line-height: 1.6;
-            min-height: 100px;
-            color: #5e0068;
+            font-size: 1.7em;
+            line-height: 1.7;
+            min-height: 120px;
+            color: #d00000;
+            font-weight: bold;
         }
-        .emoji { font-size: 2em; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🔮 NİSA'YA ÖZEL FAL 🔮</h1>
-        <p>derdini sor, falın hemen baksın kızım ✨<br>
-        <small>(emir, ömer, berat, gizli numara, bel ağrısı, diş hekimi, at binme, yks... hepsini biliyorum 😏)</small></p>
-
-        <input type="text" id="question" placeholder="sorunu yaz la...">
-        <br>
-        <button onclick="bak()">FALIMA BAK 🔮</button>
-
-        <div id="result">sorunu bekliyorum prenses 👑</div>
+        <h1>🔮 NİSA'YA ÖZEL FAL - GERÇEKLER ACITIR 🔮</h1>
+        <p>Kızım sor ne soracaksan, bu sefer yalan yok, iğne var 🔥</p>
+        <input type="text" id="question" placeholder="yaz bakalım...">
+        <br><button onclick="bak()">FALIMA BAK KIZIM</button>
+        <div id="result">yaz da göreyim ne kadar enayiymişsin bugün 😘</div>
     </div>
 
     <script>
         const cevaplar = {
-            // Emir
-            "emir": "Kızım Emir mi? O çocuk sana 40 kere yalan söyledi, gizli numaradan arattı, arabada başkasıyla story atıyor... hâlâ mı soruyorsun? YAZMA. Engelle, sil, unut. Ego tatmin aracı değilsin sen 🚩🚩🚩",
-            "emire yazayım mı": "YAZARSAN BENİ DELİRTİRSİN NİSA. O çocuk seni kankası gibi görüyor, sen hâlâ “belki” diyorsun. 5 yıl Ömer’e verdin, 5 dakika bile verme buna. Blokla gitsin 👋💅",
-            "emir beni seviyor mu": "Seviyorsa niye gizli numaradan aratıyor? Niye storyde başka kızla geziyor? Sevgi değil bu, ego oyuncağı yapıyor seni. Uyan kızım, saat kaç oldu ⏰",
+            // EMİRLE İLGİLİ HER ŞEY (iğne max)
+            "emir","emire","emir'e","emire yaz","emir yaz","emir yazayım","emir aradı","emir gizli","emir story","emir araba","emir kanki","emir sipastik","emir özgüven": "KIZIM EMİR Mİ? O çocuk seni kankası gibi görüyor, sen hâlâ prenses triplerindesin. Arabada başkasıyla story atıyor, gizli numaradan aratıyor, “sipastik misin” diye dalga geçiyor. YAZARSAN TELEFONU YERİM. Engelle, sil, çöpe at. Sen diş hekimi olacan, o hâlâ galeride çaycılık yapıyo 🚮",
+            "emir beni seviyor": "Seviyosa niye başkasıyla geziyo? Niye gizli numaradan aratıyo? Sevgi değil bu, seninle ego yarışı yapıyo. Uyan artık, 2025 bitti, hâlâ aynı mal 🔥",
 
-            // Ömer
-            "ömer": "5 YIL. BEŞ YIL. Hâlâ Ömer’i soruyorsun. O çocuk seni nankörlükle suçladı, başkasına geçti, hâlâ gönderme yapıyor. Seni unutamazmış... evet çünkü senin gibi enayiyi bir daha bulamaz 😭💔",
-            "ömere dönmeli miyim": "DÖNME. Dönersen bu fal sitesini yakarım. 5 yılın cefasını sen çektin, sefasını başkası sürüyor. Sen diş hekimi olacaksın, o hâlâ aynı bok. Bırak çürüsün kendi halinde 🦷✨",
+            // ÖMER (5 yıllık efsane)
+            "ömer","ömere","ömer'e","ömere dön","ömer unut","ömer gönderme","ömer şevval","ömer hatay": "5 YIL VERDİN BE KIZIM. Beş yıl. Ömer seni nankörlükle suçladı, Hatay’daki kıza geçti, şimdi Şevval’le geziyor, hâlâ sana gönderme yapıp ego okşuyor. Seni unutamazmış... evet çünkü senin gibi enayiyi bir daha bulamaz. DÖNME. Yak, sil, küle çevir 💔",
 
-            // Berat & çevresi
-            "berat": "Baban hapis, kendisi bıçaklı, ‘beni bu hayattan kurtar’ diyor... Nisa sen doktor olucan, o hapiste yatacak. Ruh eşiymiş... ruh eşi hapiste olur mu kızım 😂🔪",
-            "gizli numara": "Emir’in arkadaşları kesin. Dalga geçiyorlar seninle. Bir daha ararlarsa ‘isminizi söyleyin savcılığa vericem’ de, telefon kapanır hemen 😏📞",
+            // BERAT & ÇEVRE
+            "berat","berata","berat bıçak","berat hapis","berat kurtar","ruh eşi": "Babası hapiste, kendisi bıçaklı, “beni bu hayattan kurtar” diyo. Seni ruh eşi sanıyo 😂 Kızım sen diş hekimi olacan, o hapisane müdürü olacak. Uzak dur, blokla, dua et kurtulmuşsun 🙏🔪",
 
-            // Sağlık & bel ağrısı
-            "bel": "Kızım iğneyi bırakma, doktora git. Bel fıtığın var, dans mı edicen hâlâ? Ağrı kesiciyle idare etme, çarşamba randevun var git 🩺💉",
-            "ağrı": "Namaz kılarken ölüyorsun, hâlâ iğneyi erteleyecen mi? Pazartesiye kadar dayanamazsan git, yoksa yılbaşını yatakta geçirirsin 🤕",
+            // GİZLİ NUMARA OLAYI
+            "gizli numara","gizli aradı","kim aradı","aryan","aryana": "Emir’in arkadaşları %99. Seni tiye almak için arattırıyor. Bir daha ararlarsa “isminizi söyleyin savcılığa vericem” de, telefon anında kapanır. Sonra da hepsini blokla, rahat et 📵",
 
-            // Kariyer & YKS
-            "yks": "Mezuna kaldın diye ağlama. AYT fen zaten iyi, sadece mat yap. 90 bin yaparsın bu sene, diş hekimliği gelir. Emir Ömer Berat üçlüsü seni engelliyo, telefonu bırak çalış 📚🦷",
-            "diş hekimi": "OLACAKSIN. Nokta. Bu sene netlerin yeter, yığılma var diye pes etme. Seneye beyaz önlükle gezecen, onlar hâlâ aynı bokun içinde 😏🦷",
+            // SAĞLIK - BEL AĞRISI
+            "bel","belim","ağrı","iğne","doktor","erol olçok","randevu": "Kızım iğneyi bırakma, Çarşamba randevun var, git. Namaz kılarken ölüyor, hâlâ dans mı edicen? Bel fıtığın var, yılbaşını yatakta geçirme, doktora koş 🩺",
 
-            // At binme & Çorum
-            "at": "Çorum’da yeni kulüp açılmış, 17 bin 2 haftalık paket... Kızım sen önce YKS’ni kazan, atı sonra alırız sana 🐎💸",
-            "çorum": "Kent Park Suriyelilerle dolmuş, hava sıcak, sen hâlâ portable klima peşindesin. Yaz bitmeden Bodrum’a kaç, kurtul bu şehirden 😅",
+            // YKS & DİŞ HEKİMLİĞİ
+            "yks","tyt","ayt","mat","diş hekimi","dişçi","mezuna","sıralama","90 bin": "Kızım ağlama, bu sene netlerin yeter. AYT fen iyi, mat hallet. Diş hekimliği gelecek, Ömer-Emir-Berat üçlüsü seni engelliyo. Telefonu bırak, çalış. Beyaz önlükle gezecen, onlar hâlâ aynı bokun içinde 🦷📚",
 
-            // Genel iğneleyici cevaplar
-            "aşk": "Aşk mı? Senin aşkın takıntı kızım. 5 yıl Ömer, şimdi Emir... Bırak bu işleri, önce kendini sev. Kimse sana hakettiğin değeri vermiyor çünkü sen vermiyorsun 💔",
-            "sevgili": "Sevgilin olsun istiyorsun ama gelenler hep aynı paket: yalan, ego, gizli numara. Biraz standart koy, yoksa 30 yaşında hâlâ aynı muhabbet 😂",
-            "niye böyle": "Çünkü sen enayisin prenses. Herkese ikinci, üçüncü, kırkıncı şansı veriyorsun. Biraz sert ol, biraz bencil ol. Bak gör dünyan nasıl düzeliyor 👑",
+            // AT & ÇORUM
+            "at","at bin","at kulübü","17 bin","çorum","kent park","suriyeli": "17 bin 2 haftalık paket mi? Kızım önce YKS kazan, atı sonra alırız. Kent Park Suriyelilerle dolmuş, sen hâlâ “atlı spor kulübü” hayali kuruyorsun. Önce diplomanı al 🐎",
 
-            // Random eğlenceli cevaplar
-            "": "Sorun yazmadın ki boş boş bakıyorsun ekrana, klasik Nisa 😭",
-            "faruk": "O çocuk seni benden iyi tanıyor, dinle biraz onu. ‘Yazma, sil, engelle’ diyor haklı 😏",
-            "fal": "Falın tutacak ama sen yine bildiğini okuyacan, değil mi? Klasik Nisa hareketleri 🤦‍♀️💅"
+            // GENEL İĞNELER
+            "aşk","sevgili","erkek","niye böyle","yalnız","yalnızlık": "Çünkü sen enayisin prenses. Herkese 40. şansı veriyorsun. Standart koy, biraz bencil ol. Bak dünyan nasıl düzeliyor. Aşk diye bir şey yok, senin yaşadığın takıntı 💅",
+            "faruk": "O çocuk senden iyi tanıyor kankanı. Dinle biraz, “yazma, sil, engelle” diyo, haklı. En azından o yalan söylemiyo 😏",
+            "sipastik": "Emir sana dedi diye mi öğrendin bu kelimeyi? Tebrikler, 2025’in en salak kelimesi seçildi 😂",
+
+            // EKSTRA DETAYLI OLAYLAR
+            "şevval","hatay kızı","gönderme": "Ömer’in yeni sevgilisi. Sen 5 yıl cefasını çektin, sefasını o sürüyor. Hâlâ sana gönderme yapıp seni yedek tutuyo. Gururun varsa blokla gitsin 💅",
+            "portable klima","elektrik yok","duygu telefon","şarj olmuyo": "Otel maceranız efsaneydi. Klima yok, elektrik yok, Duygu’nun telefonu bozuldu, sen hâlâ “kaderim bu” diyorsun. Kaderin bu değil, seçimlerin bu 😂",
+            "bodrum","bodrum'a","bodrum kaç","bodrum yaz": "Ağustos bitince kaçıyorsun değil mi? En mantıklı kararın. Orda kafa dağıtır, yeni insanlarla tanışırsın. Burada kalan çürür gider 🌊",
+            "recep ivedik 8": "2026’da çıkıyomuş. Sen o zamana kadar hâlâ aynı dramadaysan ben de Recep İvedik olurum 😂",
+            "ford logosu","şarkı video","1.24 gb": "O şarkı videosunu hâlâ saklıyosunuz değil mi? Ford logolu eleman, bağıran Faruk, yarısında kaybolan Duygu... silin şunu, utanç videosu resmen 🎥",
+            "duygu telefon bozuldu","şarj yeri ıslandı": "Islak telefon, kuruyunca geçer dedik, geçti. Ama senin kafan hâlâ ıslak kızım 😂",
+
+            // DEFAULT İĞNELER
+            "": "Boş boş yazıyosun yine, klasik Nisa. Soru sorucan mı yoksa sadece drama queen modunda mısın? 👑",
+            "merhaba","selam","naber","naaber": "Naber değil, NASIL ENEYİ OLDUĞUNU SOR. Yine aynı bokun içindesin değil mi? 😘"
         };
 
         function bak() {
             let soru = document.getElementById("question").value.toLowerCase().trim();
-            let cevap = "Hmm bilmiyorum ya... bir daha sor 🤔";
+            let cevap = "Kızım yine aynı terane... değişmiyorsun sen 😭";
 
             for (let anahtar in cevaplar) {
                 if (soru.includes(anahtar)) {
@@ -117,26 +118,23 @@
                 }
             }
 
-            // Eğer tam eşleşme yoksa biraz random iğneleyici
-            if (cevap === "Hmm bilmiyorum ya... bir daha sor 🤔") {
+            // Hiçbir kelime tutmazsa rastgele iğne
+            if (cevap === "Kızım yine aynı terane... değişmiyorsun sen 😭") {
                 const rastgele = [
-                    "Kızım yine aynı terane... uyan artık saat kaç oldu ⏰",
-                    "Bu soruyu 40 kere sordun, cevap hâlâ aynı: BIRAK BU İŞLERİ 🚩",
-                    "Yarın yine sorucan biliyorum, çünkü sen değişmiyorsun 😭💅",
-                    "Diş hekimliği kazan, gerisi boş kızım 🦷✨",
-                    "Emir mi Ömer mi Berat mı... hepsi aynı bokun soyu, yeni sayfa aç 📖"
+                    "Yarın yine aynı soruyu sorucan biliyorum, çünkü sen değişmiyorsun 😂",
+                    "Diş hekimi ol, gerisi boş. Ömer de Emir de Berat da çöp",
+                    "Kızım 2025 bitti, hâlâ aynı dramadasın. Yeni yıl yeni sen diye bi şey yok mu sende?",
+                    "Telefonu bırak, YKS çalış. Yoksa 2026’da yine burdayız 💅",
+                    "Engelle hepsini, blokla, sil, yeni sayfa aç. Yapamıyorsan ben yapayım mı?"
                 ];
                 cevap = rastgele[Math.floor(Math.random() * rastgele.length)];
             }
 
-            document.getElementById("result").innerHTML = cevap + "<br><br><span class='emoji'>🔮✨</span>";
+            document.getElementById("result").innerHTML = cevap + "<br><br>🔥🔮";
         }
 
-        // Enter tuşuyla da çalışsın
-        document.getElementById("question").addEventListener("keyup", function(event) {
-            if (event.key === "Enter") {
-                bak();
-            }
+        document.getElementById("question").addEventListener("keyup", function(e) {
+            if (e.key === "Enter") bak();
         });
     </script>
 </body>
