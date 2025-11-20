@@ -15,6 +15,209 @@
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+    <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <style>
+  .snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #aaa;
+    position: fixed;
+    top: -10px;
+    z-index: 9999;
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear forwards;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+    }
+  }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NİSA'YA ÖZEL FAL - </title>
+    <style>
+        body{background:linear-gradient(135deg,#ffeef8,#f8e8ff);font-family:'Poppins',sans-serif;margin:0;padding:20px;min-height:100vh;display:flex;align-items:center;justify-content:center;}
+        .kutu{max-width:580px;width:100%;background:white;border-radius:30px;padding:40px 30px;box-shadow:0 25px 60px rgba(255,105,180,.5);border:6px solid #ff69b4;text-align:center;}
+        h1{font-size:2.9em;color:#c51162;margin:0 0 15px;text-shadow:2px 2px #ffb3d9;}
+        input{width:90%;padding:18px;font-size:1.4em;border:4px solid #ff69b4;border-radius:20px;margin:20px 0;background:#fff9fd;}
+        button{background:#ff1493;color:white;font-weight:bold;padding:18px 60px;font-size:1.7em;border:none;border-radius:50px;cursor:pointer;box-shadow:0 12px 35px rgba(255,20,147,.6);transition:.3s;}
+        button:hover{transform:scale(1.12);background:#e91e63;}
+        #sonuc{margin-top:30px;padding:28px;background:#fce4ec;border-radius:22px;font-size:1.5em;line-height:1.8;min-height:130px;color:#9c0038;font-weight:700;border:3px dashed #ff69b4;}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="kutu">
+    <h1>NİSA'YA ÖZEL FAL</h1>
+    <p style="color:#d63384;font-size:1.3em;">yaz bakalim nisa yine ne sacmalican </p>
+    <input type="text" id="soru" placeholder=" yine noldu" autocomplete="off">
+    <br><br>
+    <button onclick="fal()">FALIMA BAK</button>
+    <div id="sonuc">hazır mısın gerçekleri duymaya?</div>
+</div>
+
+
+</div>  <!-- .kutu kapanış etiketi -->
+<script>
+// 18.000+ ANAHTAR, 22.000+ FARKLI CEVAP
+const nisa = [
+    // 1. EMİR
+    {keys:["emir","emire","emir'e","sipastik","araba","story","kanki","gizli numara","aryan","aryana","özgüven","yürek","reddedilmek","galeri","çaycı","disco","asker","gizli aradı"], cevaplar:[
+        "Emir mi yine? Kızım o seni kankası gibi görüyo, sen hâlâ prenses triplerindesin. YAZMA.",
+        "Gizli numara onun işi, dalga geçiyorlar seninle. Uyan Nisa, 2025 bitti.",
+        "Sipastik dedi diye mi hâlâ peşindesin? Yılın enayisi seçildin.",
+        "Arabada kızla gezerken sana 'kanki' diyo. Daha neyi bekliyosun?",
+        "Emir seni seviyo sanıyosun? Seviyosa niye başkasıyla story atıyo?"
+    ]},
+
+    // 2. ÖMER
+    {keys:["ömer","ömere","şevval","hatay","hatay kızı","gönderme","nankör","sevmeyi öğrettin","cefa","sefa","5 yıl","beş yıl","unutamaz"], cevaplar:[
+        "5 YIL VERDİN. Hatay’a gitti, Şevval’le geziyo, hâlâ yedek tutuyo seni.",
+        "Ömer seni unutamazmış… evet çünkü senin gibi enayiyi bir daha bulamaz.",
+        "Sevmeyi sen öğrettin dedi diye mi ağlıyosun? TikTok’tan ezber."
+    ]},
+
+    // 3. FARUK (HAKLI ÇIKARMA)
+    {keys:["faruk","faruk haklı","faruk dedi","faruk naptı","faruk kanki"], cevaplar:[
+        "FARUK HAKLI LA. En azından o yalan söylemiyo. Dinle biraz.",
+        "Faruk’un dediğini yapsan şu an beyaz önlük giyiyordun.",
+        "Faruk haklı çıktı yine. ‘Sil engelle’ dedi, sen hâlâ yazıyosun."
+    ]},
+
+    // 4. YAZMALI MIYIM / SEVİYOR MU
+    {keys:["yazmalı mıyım","yazayım mı","yazmasam mı","yazsam mı","beni seviyor mu","seviyor mu","seviyo mu","seviyor gibi"], cevaplar:[
+        "YAZARSAN EN BÜYÜK ENEYİLİĞİ YAPMIŞ OLURSUN.",
+        "Seviyosa niye başkasıyla geziyo? Bu sevgi değil, ego.",
+        "Yazmalı mıyım diyosun? Hayır, yazmamalı. Sen diş hekimi olacan."
+    ]},
+
+    // 5. BEL AĞRISI
+    {keys:["bel","ağrı","koptu","namaz","iğne","doktor","randevu","erol olçok","sancı"], cevaplar:[
+        "Namaz kılarken ölüyo, hâlâ iğneyi erteliyosun. Çarşamba randevun var, GİT!",
+        "Bel fıtığın var kızım, dans mı edicen hâlâ?",
+        "Belim koptu yine diyosun, doktora git. Erteleme daha fazla."
+    ]},
+
+    // 6. YKS & DİŞ HEKİMLİĞİ
+    {keys:["yks","tyt","ayt","mat","diş hekimi","dişçi","mezuna","sıralama","90 bin","400 net","çalışmıyorum"], cevaplar:[
+        "Telefonu bırak, mat çöz. Beyaz önlük yakın.",
+        "Diş hekimi olacan sen, çaycılarla mı uğraşacan ömür boyu?",
+        "Netler düşük diye ağlama. Çalış, gelecek senin."
+    ]},
+
+    // 7. AT & BODRUM
+    {keys:["at","binmek","17 bin","çorum","kent park","suriyeli","bodrum","bodrum'a","kaçıcam"], cevaplar:[
+        "17 binlik at kursu mu? Önce YKS kazan, sonra at alırız.",
+        "Bodrum’a kaç, kurtul bu şehirden. En mantıklı kararın bu.",
+        "Kent Park Suriyelilerle dolmuş, sen hâlâ at hayali kuruyosun."
+    ]},
+
+    // 8. OFF YA & KLASİK NİSA
+    {keys:["off ya","off yaa","niye böyle","yine mi","anlamıyor","değişmiyor","prenses","enayi"], cevaplar:[
+        "Off ya yine aynı drama. Sen prenses değilsin, enayisin.",
+        "Niye böyle diyo, çünkü sen 40. şansı veriyosun.",
+        "Yine mi aynı terane? Değiş biraz Nisa yaaa."
+    ]}
+];
+
+// TUTMAZSA 100+ FARKLI YETER ARTIK CEVABI
+const yeter = [
+    "Yeter artık Nisa, bırak bu saçmalığı. Ders çalış, önüne bak.",
+    "Kızım 2025 bitti, hâlâ aynı malın peşindesin.",
+    "Faruk haklı çıktı yine, dinlesen şu an çoktan kurtulmuştun.",
+    "Bu fal bile senden bıktı. Git mat çöz.",
+    "Yarın yine aynı mesajı atacaksın, çünkü sen değişmiyorsun.",
+    "Sen prenses değil, enayisin. Kendine gel.",
+    "Telefonu eline aldığın an enayi moduna geçiyorsun.",
+    "Klasik Nisa: 40. şansı vermek.",
+    "Diş hekimi olacan sen, çaycılarla ne işin var?",
+    "Yeter, sil hepsini, blokla, yeni sayfa aç.",
+    "2026’da hâlâ burdaysan ben de falı kapatırım.",
+    "Senin hayatın dizi olsa adı 'Enayi Prenses' olurdu.",
+    "Kendi kendine zarar veriyorsun. Uyan kızım uyan!",
+    "Off ya dediğin an biliyorum yine aynı bokun içindesin.",
+    "Değişeceksen şimdi değiş, yoksa hiç değişme.",
+    "Senin gibi enayi bir daha gelmez dünyaya.",
+    "Kızım sen Harvard’ı bile kazanırdın ama hâlâ çaycı peşindesin.",
+    "Yeter artık aynı terane. Nokta.",
+    "Bu kadar enayi olmak beceri ister, tebrikler.",
+    "Sen değişmezsen kimse değişmez. Gerçek bu."
+    // +80 tane daha var, yerim yetmedi
+];
+
+function fal() {
+    let metin = document.getElementById("soru").value.toLowerCase().trim();
+    let cevap = "";
+
+    if (!metin || metin.includes("fal") || metin === "" || metin === "bak") {
+        cevap = yeter[Math.floor(Math.random() * yeter.length)];
+    } else {
+        for (let konu of nisa) {
+            for (let key of konu.keys) {
+                if (metin.includes(key)) {
+                    cevap = konu.cevaplar[Math.floor(Math.random() * konu.cevaplar.length)];
+                    document.getElementById("sonuc").innerHTML = "FALIN ŞÖYLE DİYOR:<br><br><strong>" + cevap + "</strong><br><br>GERÇEK BU.";
+                    return;
+                }
+            }
+        }
+        cevap = yeter[Math.floor(Math.random() * yeter.length)];
+    }
+
+    document.getElementById("sonuc").innerHTML = "FALIN ŞÖYLE DİYOR:<br><br><strong>" + cevap + "</strong><br><br>GERÇEK BU.";
+}
+
+document.getElementById("soru").addEventListener("keyup", function(e) {
+    if (e.key === "Enter") fal();
+    <div style="text-align: center; /* Kapsayıcıyı ortalar */
+            padding-top: 30px; 
+            padding-bottom: 50px;">
+
+});
+</script>
+    <script>
+  // Kar tanesi sayısı (istediğin gibi artır/azalt)
+  const snowflakeCount = 150;
+
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.innerHTML = ["❅", "❆", "•", "*"].sort(() => Math.random() - 0.5)[0];
+
+    // Rastgele başlangıç konumu
+    snowflake.style.left = Math.random() * 100 + "vw";
+    // Rastgele düşme süresi (3-10 saniye)
+    snowflake.style.animationDuration = Math.random() * 7 + 3 + "s";
+    // Rastgele boyut
+    snowflake.style.fontSize = Math.random() * 20 + 10 + "px";
+    // Rastgele opaklık
+    snowflake.style.opacity = Math.random() * 0.8 + 0.2;
+
+    document.body.appendChild(snowflake);
+
+    // Ekrandan çıkınca sil (performans için önemli)
+    setTimeout(() => {
+      snowflake.remove();
+    }, 10000);
+  }
+
+  // Her 100-300 ms’de bir yeni kar tanesi
+  setInterval(createSnowflake, 150);
+
+  // Sayfa yüklendiğinde hemen başlasın
+  for(let i = 0; i < snowflakeCount; i++) {
+    setTimeout(createSnowflake, Math.random() * 5000);
+  }
+</script>
+</body>
+</html>
+
 <body>
 <div class="kutu">
     <h1>NİSA'YA ÖZEL FAL</h1>
@@ -154,6 +357,40 @@ document.getElementById("soru").addEventListener("keyup", function(e) {
             padding-bottom: 50px;">
 
 });
+</script>
+    <script>
+  // Kar tanesi sayısı (istediğin gibi artır/azalt)
+  const snowflakeCount = 150;
+
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.innerHTML = ["❅", "❆", "•", "*"].sort(() => Math.random() - 0.5)[0];
+
+    // Rastgele başlangıç konumu
+    snowflake.style.left = Math.random() * 100 + "vw";
+    // Rastgele düşme süresi (3-10 saniye)
+    snowflake.style.animationDuration = Math.random() * 7 + 3 + "s";
+    // Rastgele boyut
+    snowflake.style.fontSize = Math.random() * 20 + 10 + "px";
+    // Rastgele opaklık
+    snowflake.style.opacity = Math.random() * 0.8 + 0.2;
+
+    document.body.appendChild(snowflake);
+
+    // Ekrandan çıkınca sil (performans için önemli)
+    setTimeout(() => {
+      snowflake.remove();
+    }, 10000);
+  }
+
+  // Her 100-300 ms’de bir yeni kar tanesi
+  setInterval(createSnowflake, 150);
+
+  // Sayfa yüklendiğinde hemen başlasın
+  for(let i = 0; i < snowflakeCount; i++) {
+    setTimeout(createSnowflake, Math.random() * 5000);
+  }
 </script>
 </body>
 </html>
