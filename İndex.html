@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanal Kahve Falı</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+        textarea {
+            width: 90%;
+            height: 100px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            min-height: 50px;
+            text-align: left;
+            background-color: #e9ecef;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fincanınızı Kapatın ve Düşünün...</h2>
+        <textarea id="userInput" placeholder="Aklınızdaki soruları veya konuyu buraya yazın (Örn: Eski sevgilimle barışacak mıyım? Yeni işim ne olacak?)."></textarea>
+        <button onclick="getFortune()">Fal Bak</button>
+        <div id="result">
+            Sonucunuz burada belirecektir.
+        </div>
+    </div>
+
+    <script>
+        // 🔮 Kendi metinlerinizi buraya ekleyin
+        const specialFortunes = {
+            // Anahtar kelimeyi küçük harfe çevirerek buraya ekleyin
+            "eski sevgilim": "Özel metin: Kalbinin derinliklerinde hala geçmişin izleri var. Yakın zamanda ondan bir haber alabilirsin, ancak bu sana yeni bir başlangıç yapma fırsatı sunacak.",
+            "yeni iş": "Özel metin: Kariyer alanında parlak bir döneme giriyorsun. Cesur ol ve önüne çıkacak yeni teklifleri değerlendir. Başarı yakında.",
+            "para": "Özel metin: Maddi durumunla ilgili beklediğin bir gelişme çok yakında gerçekleşecek. Ancak harcamalarına dikkat etmelisin."
+            // İstediğiniz kadar özel metin ekleyebilirsiniz.
+        };
+
+        // ☕ Havuzdaki 40 (veya daha fazla/az) rastgele fal metniniz
+        const generalFortunes = [
+            "Güzel günler seni bekliyor, sabırlı ol. Yakın çevrenden alacağın destekle büyük bir engeli aşacaksın.",
+            "Bir yolculuk görünüyor. Bu yolculuk sadece fiziksel değil, aynı zamanda kişisel bir keşif yolculuğu olacak.",
+            "Haneye bir misafir gelebilir. Bu kişi beraberinde neşe ve bereket getirecek.",
+            "Kısa bir süre içinde hayatını değiştirecek önemli bir karar alman gerekebilir. İç sesini dinle.",
+            "Umutların yeşeriyor. Bir dileğin gerçekleşmesi için doğru zamandasın, enerjini buna odakla.",
+            "Sana dargın olan bir dostunla barışma fırsatı doğacak. Bu, sana huzur getirecek.",
+            "Yakın zamanda hiç ummadığın bir yerden eline toplu bir miktar para geçebilir.",
+            "Aşk hayatında yeni bir sayfa açılıyor. Eğer yalnızsan, çok özel biriyle tanışacaksın.",
+            "Gizli bir hayranın var. Bu kişi sana duygularını açmak için doğru anı kolluyor.",
+            "Üzerindeki baskı azalıyor. Bir süredir seni yoran bir konu nihayet çözüme kavuşacak.",
+            // Buraya 10'dan 40'a tamamlayacak şekilde kendi metinlerinizi ekleyin.
+        ];
+
+        function getFortune() {
+            const userInput = document.getElementById('userInput').value.trim().toLowerCase();
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = "Falınızı yorumluyorum...";
+
+            if (userInput === "") {
+                resultDiv.textContent = "Lütfen fal bakılmasını istediğiniz konuyu yazın.";
+                return;
+            }
+
+            let foundSpecialFortune = false;
+
+            // 1. Özel Metin Kontrolü
+            for (const keyword in specialFortunes) {
+                // Kullanıcı metni anahtar kelimeyi içeriyor mu?
+                if (userInput.includes(keyword)) {
+                    resultDiv.textContent = specialFortunes[keyword];
+                    foundSpecialFortune = true;
+                    break; 
+                }
+            }
+
+            // 2. Rastgele Metin Kontrolü (Özel metin bulunamazsa)
+            if (!foundSpecialFortune) {
+                const randomIndex = Math.floor(Math.random() * generalFortunes.length);
+                resultDiv.textContent = generalFortunes[randomIndex];
+            }
+        }
+    </script>
+</body>
+</html>
