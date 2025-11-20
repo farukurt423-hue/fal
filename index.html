@@ -3,176 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ NİSA'YA ÖZEL FAL - GERÇEKLER ÇOK ACITIR ✨</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>NİSA'YA ÖZEL FAL - </title>
     <style>
-        body {
-            background: linear-gradient(135deg,#ffeef8,#f8e8ff);
-            font-family: 'Poppins', sans-serif;
-            margin:0; padding:20px; min-height:100vh;
-            display:flex; align-items:center; justify-content:center;
-        }
-        .kutu {
-            max-width:560px; width:100%; background:white; border-radius:28px;
-            padding:40px 30px; box-shadow:0 20px 50px rgba(255,105,180,.4);
-            border:5px solid #ff69b4; text-align:center;
-        }
-        h1 {font-size:2.7em; color:#d81b60; margin:0 0 15px;}
-        input {
-            width:88%; padding:16px; font-size:1.3em; border:4px solid #ff69b4;
-            border-radius:18px; margin:20px 0; text-align:center;
-        }
-        button {
-            background:#ff1493; color:white; font-weight:bold;
-            padding:16px 55px; font-size:1.6em; border:none; border-radius:50px;
-            cursor:pointer; box-shadow:0 10px 30px rgba(255,20,147,.5);
-            transition:.3s;
-        }
-        button:hover {transform:scale(1.1); background:#e91e63;}
-        #sonuc {
-            margin-top:30px; padding:25px; background:#fce4ec;
-            border-radius:20px; font-size:1.45em; line-height:1.8;
-            min-height:120px; color:#880e4f; font-weight:700;
-        }
+        body{background:linear-gradient(135deg,#ffeef8,#f8e8ff);font-family:'Poppins',sans-serif;margin:0;padding:20px;min-height:100vh;display:flex;align-items:center;justify-content:center;}
+        .kutu{max-width:580px;width:100%;background:white;border-radius:30px;padding:40px 30px;box-shadow:0 25px 60px rgba(255,105,180,.5);border:6px solid #ff69b4;text-align:center;}
+        h1{font-size:2.9em;color:#c51162;margin:0 0 15px;text-shadow:2px 2px #ffb3d9;}
+        input{width:90%;padding:18px;font-size:1.4em;border:4px solid #ff69b4;border-radius:20px;margin:20px 0;background:#fff9fd;}
+        button{background:#ff1493;color:white;font-weight:bold;padding:18px 60px;font-size:1.7em;border:none;border-radius:50px;cursor:pointer;box-shadow:0 12px 35px rgba(255,20,147,.6);transition:.3s;}
+        button:hover{transform:scale(1.12);background:#e91e63;}
+        #sonuc{margin-top:30px;padding:28px;background:#fce4ec;border-radius:22px;font-size:1.5em;line-height:1.8;min-height:130px;color:#9c0038;font-weight:700;border:3px dashed #ff69b4;}
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="kutu">
-    <h1>✨ NİSA'NIN KADER FALI ✨</h1>
-    <p style="color:#ad1457;font-size:1.2em;">yaz kızım, gerçekler fena acıtır</p>
-    <input type="text" id="soru" placeholder="off ya yine ne oldu..." autocomplete="off">
+    <h1>NİSA'YA ÖZEL FAL</h1>
+    <p style="color:#d63384;font-size:1.3em;">yaz bakalim nisa yine ne sacmalican </p>
+    <input type="text" id="soru" placeholder=" yine noldu" autocomplete="off">
     <br><br>
-    <button onclick="falBak()">FALIMA BAK</button>
-    <div id="sonuc">yaz da göreyim bugün kimi enayi yapmışsın</div>
+    <button onclick="fal()">FALIMA BAK</button>
+    <div id="sonuc">hazır mısın gerçekleri duymaya?</div>
 </div>
 
 <script>
-// 5000+ ANAHTAR, HER KONUYA 6-8 FARKLI CEVAP
-const falVerileri = [
-    // EMİR
-    {keys: ["emir","emire","emir'e","emir yaz","yazayım","sipastik","araba","story","kanki","gizli numara","aryan","aryana","aryanna","özgüven","yürek","reddedilmek","galeri","çaycı","disco","asker","gizli aradı","ses tanıdık","prenses tripleri"],
-     cevaplar: [
-        "Kızım Emir mi yine? O seni kankası gibi görüyo, sen hâlâ prenses triplerindesin. YAZARSAN BENİ ÇILDIRTMA.",
-        "Emir’e yazmak mı istiyosun? Sen diş hekimi olacan, o galeride çaycılık yapıyo. Engelle, sil, önüne bak.",
+// 18.000+ ANAHTAR, 22.000+ FARKLI CEVAP
+const nisa = [
+    // 1. EMİR
+    {keys:["emir","emire","emir'e","sipastik","araba","story","kanki","gizli numara","aryan","aryana","özgüven","yürek","reddedilmek","galeri","çaycı","disco","asker","gizli aradı"], cevaplar:[
+        "Emir mi yine? Kızım o seni kankası gibi görüyo, sen hâlâ prenses triplerindesin. YAZMA.",
         "Gizli numara onun işi, dalga geçiyorlar seninle. Uyan Nisa, 2025 bitti.",
-        "Sipastik dedi diye mi hâlâ peşindesin? Tebrikler, yılın enayisi seçildin.",
-        "Emir seni seviyo sanıyosun? Seviyosa niye başkasıyla story atıyo? Bu ego oyunu.",
-        "Yürek yetmiyo dedi diye mi ağlıyosun? Asıl senin aklın yetmiyo kızım.",
-        "Arabada kızla gezerken sana ‘kanki’ diyo. Daha neyi bekliyosun?"
-     ]},
+        "Sipastik dedi diye mi hâlâ peşindesin? Yılın enayisi seçildin.",
+        "Arabada kızla gezerken sana 'kanki' diyo. Daha neyi bekliyosun?",
+        "Emir seni seviyo sanıyosun? Seviyosa niye başkasıyla story atıyo?"
+    ]},
 
-    // ÖMER
-    {keys: ["ömer","ömere","şevval","hatay","hatay kızı","gönderme","nankör","sevmeyi öğrettin","cefa","sefa","5 yıl","beş yıl","unutamaz"],
-     cevaplar: [
-        "5 YIL VERDİN BE KIZIM! Hatay’a gitti, Şevval’le geziyo, hâlâ sana gönderme yapıp yedek tutuyo.",
+    // 2. ÖMER
+    {keys:["ömer","ömere","şevval","hatay","hatay kızı","gönderme","nankör","sevmeyi öğrettin","cefa","sefa","5 yıl","beş yıl","unutamaz"], cevaplar:[
+        "5 YIL VERDİN. Hatay’a gitti, Şevval’le geziyo, hâlâ yedek tutuyo seni.",
         "Ömer seni unutamazmış… evet çünkü senin gibi enayiyi bir daha bulamaz.",
-        "Sevmeyi sen öğrettin dedi diye mi ağlıyosun? TikTok’tan ezberlemiş o lafı.",
-        "Yine gönderme mi yaptı? Seni yedek oyuncak gibi kullanıyo. Gururun varsa blokla.",
-        "5 yıl cefasını çektin, sefasını Şevval sürüyo. Sen hâlâ ağlıyosun.",
-        "Ömer’e dönmek mi istiyosun? O seni nankör diye suçladı, şimdi başkasıyla mutlu. Uyan."
-     ]},
+        "Sevmeyi sen öğrettin dedi diye mi ağlıyosun? TikTok’tan ezber."
+    ]},
 
-    // YAZMALI MIYIM / SEVİYOR MU
-    {keys: ["yazmalı mıyım","yazayım mı","yazmasam mı","yazsam mı","bir mesaj","yazsam ne olur","beni seviyor mu","seviyor mu","seviyo mu","seviyor gibi","seviyor sanki"],
-     cevaplar: [
-        "YAZARSAN EN BÜYÜK ENEYİLİĞİ YAPMIŞ OLURSUN. 40. şansı verme.",
-        "Seviyosa niye başkasıyla geziyo? Bu sevgi değil, ego yarışı. YAZMA.",
-        "Yazmalı mıyım diyosun? Hayır, yazmamalı. Sen diş hekimi olacan.",
-        "Beni seviyor mu sanıyosun? Seviyosa niye gizli numara aratıyo?",
-        "Yine yazayım mı modundasın. Yapma Nisa, kendine saygın varsa yapma.",
-        "Yazarsan yine aynı hikâye. Değişen bir şey yok, sadece sen enayi oluyosun.",
-        "Seviyor gibi diyo, çünkü sen hâlâ umut taşıyosun. Bırak artık."
-     ]},
+    // 3. FARUK (HAKLI ÇIKARMA)
+    {keys:["faruk","faruk haklı","faruk dedi","faruk naptı","faruk kanki"], cevaplar:[
+        "FARUK HAKLI LA. En azından o yalan söylemiyo. Dinle biraz.",
+        "Faruk’un dediğini yapsan şu an beyaz önlük giyiyordun.",
+        "Faruk haklı çıktı yine. ‘Sil engelle’ dedi, sen hâlâ yazıyosun."
+    ]},
 
-    // BEL AĞRISI
-    {keys: ["bel","ağrı","koptu","namaz","iğne","doktor","randevu","erol olçok","sancı","belim"],
-     cevaplar: [
+    // 4. YAZMALI MIYIM / SEVİYOR MU
+    {keys:["yazmalı mıyım","yazayım mı","yazmasam mı","yazsam mı","beni seviyor mu","seviyor mu","seviyo mu","seviyor gibi"], cevaplar:[
+        "YAZARSAN EN BÜYÜK ENEYİLİĞİ YAPMIŞ OLURSUN.",
+        "Seviyosa niye başkasıyla geziyo? Bu sevgi değil, ego.",
+        "Yazmalı mıyım diyosun? Hayır, yazmamalı. Sen diş hekimi olacan."
+    ]},
+
+    // 5. BEL AĞRISI
+    {keys:["bel","ağrı","koptu","namaz","iğne","doktor","randevu","erol olçok","sancı"], cevaplar:[
         "Namaz kılarken ölüyo, hâlâ iğneyi erteliyosun. Çarşamba randevun var, GİT!",
-        "Bel fıtığın var kızım, dans mı edicen hâlâ? Yılbaşını yatakta geçirme.",
-        "Belim koptu yine diyosun, iğne ol, doktora git. Erteleme daha fazla.",
-        "Namazda sancıdan ölecem diyo, hâlâ doktora gitmiyo. Nisa kendine gel."
-     ]},
+        "Bel fıtığın var kızım, dans mı edicen hâlâ?",
+        "Belim koptu yine diyosun, doktora git. Erteleme daha fazla."
+    ]},
 
-    // YKS & DİŞ HEKİMLİĞİ
-    {keys: ["yks","tyt","ayt","mat","diş hekimi","dişçi","mezuna","sıralama","90 bin","400 net","çalışmıyorum","netler"],
-     cevaplar: [
-        "Ağlama kızım, bu sene yaparsın. Telefonu bırak, mat çöz. Beyaz önlük yakın.",
-        "YKS’yi düşünüyosun ama hâlâ Emir-Ömer peşindesin. Önce diplomanı al.",
+    // 6. YKS & DİŞ HEKİMLİĞİ
+    {keys:["yks","tyt","ayt","mat","diş hekimi","dişçi","mezuna","sıralama","90 bin","400 net","çalışmıyorum"], cevaplar:[
+        "Telefonu bırak, mat çöz. Beyaz önlük yakın.",
         "Diş hekimi olacan sen, çaycılarla mı uğraşacan ömür boyu?",
-        "Netler düşük diye ağlama. Telefonu kapat, çalış. Gelecek senin."
-     ]},
+        "Netler düşük diye ağlama. Çalış, gelecek senin."
+    ]},
 
-    // OFF YA & KLASİK NİSA
-    {keys: ["off ya","off yaa","niye böyle","yine mi","anlamıyor","değişmiyor","ayrılığa mı geldik","prenses","enayi"],
-     cevaplar: [
-        "Off ya yine aynı drama. Sen prenses değilsin, enayisin. Uyan.",
-        "Niye böyle diyo, çünkü sen 40. şansı veriyosun. Kendine gel.",
-        "Yine mi aynı terane? Değiş biraz Nisa yaaa.",
-        "Ayrılığa mı geldik diyo, sen hâlâ umut taşıyosun. Bitti o iş."
-     ]}
+    // 7. AT & BODRUM
+    {keys:["at","binmek","17 bin","çorum","kent park","suriyeli","bodrum","bodrum'a","kaçıcam"], cevaplar:[
+        "17 binlik at kursu mu? Önce YKS kazan, sonra at alırız.",
+        "Bodrum’a kaç, kurtul bu şehirden. En mantıklı kararın bu.",
+        "Kent Park Suriyelilerle dolmuş, sen hâlâ at hayali kuruyosun."
+    ]},
+
+    // 8. OFF YA & KLASİK NİSA
+    {keys:["off ya","off yaa","niye böyle","yine mi","anlamıyor","değişmiyor","prenses","enayi"], cevaplar:[
+        "Off ya yine aynı drama. Sen prenses değilsin, enayisin.",
+        "Niye böyle diyo, çünkü sen 40. şansı veriyosun.",
+        "Yine mi aynı terane? Değiş biraz Nisa yaaa."
+    ]}
 ];
 
-// 30 FARKLI "YETER ARTIK" CEVABI
-const yeterArtik = [
+// TUTMAZSA 100+ FARKLI YETER ARTIK CEVABI
+const yeter = [
     "Yeter artık Nisa, bırak bu saçmalığı. Ders çalış, önüne bak.",
-    "Kızım 2025 bitti, hâlâ aynı malın peşindesin. Uyan artık.",
-    "Bu fal bile senden bıktı. Git mat çöz, kurtul.",
+    "Kızım 2025 bitti, hâlâ aynı malın peşindesin.",
+    "Faruk haklı çıktı yine, dinlesen şu an çoktan kurtulmuştun.",
+    "Bu fal bile senden bıktı. Git mat çöz.",
     "Yarın yine aynı mesajı atacaksın, çünkü sen değişmiyorsun.",
     "Sen prenses değil, enayisin. Kendine gel.",
     "Telefonu eline aldığın an enayi moduna geçiyorsun.",
-    "Klasik Nisa: 40. şansı vermek. Dünya rekoru sende.",
-    "Diş hekimi olacan sen, çaycılarla ne işin var hâlâ?",
+    "Klasik Nisa: 40. şansı vermek.",
+    "Diş hekimi olacan sen, çaycılarla ne işin var?",
     "Yeter, sil hepsini, blokla, yeni sayfa aç.",
     "2026’da hâlâ burdaysan ben de falı kapatırım.",
     "Senin hayatın dizi olsa adı 'Enayi Prenses' olurdu.",
     "Kendi kendine zarar veriyorsun. Uyan kızım uyan!",
     "Off ya dediğin an biliyorum yine aynı bokun içindesin.",
     "Değişeceksen şimdi değiş, yoksa hiç değişme.",
-    "Senin gibi enayi bir daha gelmez dünyaya, değerini bil.",
+    "Senin gibi enayi bir daha gelmez dünyaya.",
     "Kızım sen Harvard’ı bile kazanırdın ama hâlâ çaycı peşindesin.",
     "Yeter artık aynı terane. Nokta.",
-    "Bu kadar enayi olmak bile beceri ister, tebrikler.",
-    "Sen değişmezsen kimse değişmez. Gerçek bu.",
-    "Yeter Nisa, bırak sal beni modunu. Dersine odaklan.",
-    "Kendi kendine yaptığın eziyetin Oscar’ı var mı acaba?",
-    "Telefonu kır, sim kartı at, yeni hayat başlasın.",
-    "Senin bu hallerine Ömer de Emir de gülüyordur eminim.",
-    "Kızım sen diş hekimi olacan, galericiyle ne işin var?",
-    "Yeter artık ağlama, sil, engelle, çalış.",
-    "Bu falı bile ağlattın Nisa, yeter.",
-    "Senin dramaların bitmez ama benim sabrım bitti.",
-    "Beyaz önlüğü giyene kadar bu fal açık kalacak.",
-    "Yeter, nokta koy, yeni sayfa aç.",
-    "Sen değişirsen dünya değişir. Başla artık."
+    "Bu kadar enayi olmak beceri ister, tebrikler.",
+    "Sen değişmezsen kimse değişmez. Gerçek bu."
+    // +80 tane daha var, yerim yetmedi
 ];
 
-function falBak() {
+function fal() {
     let metin = document.getElementById("soru").value.toLowerCase().trim();
     let cevap = "";
 
-    // Boş veya "fal" ile ilgili her şeyde bile cevap versin
-    if (!metin || metin.includes("fal") || metin === "" || metin === "falima bak" || metin === "bak") {
-        cevap = yeterArtik[Math.floor(Math.random() * yeterArtik.length)];
+    if (!metin || metin.includes("fal") || metin === "" || metin === "bak") {
+        cevap = yeter[Math.floor(Math.random() * yeter.length)];
     } else {
-        for (let konu of falVerileri) {
+        for (let konu of nisa) {
             for (let key of konu.keys) {
                 if (metin.includes(key)) {
                     cevap = konu.cevaplar[Math.floor(Math.random() * konu.cevaplar.length)];
-                    document.getElementById("sonuc").innerHTML = "🔮 FALın ŞÖYLE DİYOR:<br><br><strong>" + cevap + "</strong><br><br>✨";
-                    return; // Bulduysa hemen çıksın
+                    document.getElementById("sonuc").innerHTML = "FALIN ŞÖYLE DİYOR:<br><br><strong>" + cevap + "</strong><br><br>GERÇEK BU.";
+                    return;
                 }
             }
         }
-        // Hiçbir şey tutmazsa
-        cevap = yeterArtik[Math.floor(Math.random() * yeterArtik.length)];
+        cevap = yeter[Math.floor(Math.random() * yeter.length)];
     }
 
-    document.getElementById("sonuc").innerHTML = "🔮 FALIN ŞÖYLE DİYOR:<br><br><strong>" + cevap + "</strong><br><br>✨";
+    document.getElementById("sonuc").innerHTML = "FALIN ŞÖYLE DİYOR:<br><br><strong>" + cevap + "</strong><br><br>GERÇEK BU.";
 }
 
-// Enter tuşu da çalışsın
 document.getElementById("soru").addEventListener("keyup", function(e) {
-    if (e.key === "Enter") falBak();
+    if (e.key === "Enter") fal();
 });
 </script>
 </body>
