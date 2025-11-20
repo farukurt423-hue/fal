@@ -3,125 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanal Kahve Falı</title>
+    <title>Nisa'ya Özel Fal ✨🔮</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            color: #333;
+            margin: 0;
             padding: 20px;
         }
         .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 450px;
-            width: 100%;
-            text-align: center;
+            max-width: 700px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.9);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
-        textarea {
-            width: 90%;
-            height: 100px;
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            resize: none;
+        h1 {
+            font-size: 3em;
+            color: #d63384;
+            text-shadow: 3px 3px #ff9a9e;
+        }
+        input {
+            width: 80%;
+            padding: 15px;
+            font-size: 1.3em;
+            border: 3px solid #ff9a9e;
+            border-radius: 15px;
+            margin: 20px 0;
         }
         button {
-            padding: 10px 20px;
-            background-color: #5cb85c;
+            background: #ff6bcb;
             color: white;
+            padding: 15px 40px;
+            font-size: 1.5em;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            box-shadow: 0 10px 20px rgba(255,107,203,0.4);
         }
-        button:hover {
-            background-color: #4cae4c;
-        }
+        button:hover { background: #d63384; transform: scale(1.1); }
         #result {
-            margin-top: 30px;
-            padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 5px;
-            min-height: 50px;
-            text-align: left;
-            background-color: #e9ecef;
+            margin-top: 40px;
+            font-size: 1.8em;
+            line-height: 1.6;
+            min-height: 100px;
+            color: #5e0068;
         }
-        h2 {
-            color: #333;
-            margin-bottom: 25px;
-        }
+        .emoji { font-size: 2em; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Fincanınızı Kapatın ve Düşünün...</h2>
-        <textarea id="userInput" placeholder="Aklınızdaki soruları veya konuyu buraya yazın (Örn: Eski sevgilimle barışacak mıyım? Yeni işim ne olacak?)."></textarea>
-        <button onclick="getFortune()">Fal Bak</button>
-        <div id="result">
-            Sonucunuz burada belirecektir.
-        </div>
+        <h1>🔮 NİSA'YA ÖZEL FAL 🔮</h1>
+        <p>derdini sor, falın hemen baksın kızım ✨<br>
+        <small>(emir, ömer, berat, gizli numara, bel ağrısı, diş hekimi, at binme, yks... hepsini biliyorum 😏)</small></p>
+
+        <input type="text" id="question" placeholder="sorunu yaz la...">
+        <br>
+        <button onclick="bak()">FALIMA BAK 🔮</button>
+
+        <div id="result">sorunu bekliyorum prenses 👑</div>
     </div>
 
     <script>
-        // 🔮 Kendi metinlerinizi buraya ekleyin
-        const specialFortunes = {
-            // Anahtar kelimeyi küçük harfe çevirerek buraya ekleyin
-            "eski sevgilim": "Özel metin: Kalbinin derinliklerinde hala geçmişin izleri var. Yakın zamanda ondan bir haber alabilirsin, ancak bu sana yeni bir başlangıç yapma fırsatı sunacak.",
-            "yeni iş": "Özel metin: Kariyer alanında parlak bir döneme giriyorsun. Cesur ol ve önüne çıkacak yeni teklifleri değerlendir. Başarı yakında.",
-            "para": "Özel metin: Maddi durumunla ilgili beklediğin bir gelişme çok yakında gerçekleşecek. Ancak harcamalarına dikkat etmelisin."
-            // İstediğiniz kadar özel metin ekleyebilirsiniz.
+        const cevaplar = {
+            // Emir
+            "emir": "Kızım Emir mi? O çocuk sana 40 kere yalan söyledi, gizli numaradan arattı, arabada başkasıyla story atıyor... hâlâ mı soruyorsun? YAZMA. Engelle, sil, unut. Ego tatmin aracı değilsin sen 🚩🚩🚩",
+            "emire yazayım mı": "YAZARSAN BENİ DELİRTİRSİN NİSA. O çocuk seni kankası gibi görüyor, sen hâlâ “belki” diyorsun. 5 yıl Ömer’e verdin, 5 dakika bile verme buna. Blokla gitsin 👋💅",
+            "emir beni seviyor mu": "Seviyorsa niye gizli numaradan aratıyor? Niye storyde başka kızla geziyor? Sevgi değil bu, ego oyuncağı yapıyor seni. Uyan kızım, saat kaç oldu ⏰",
+
+            // Ömer
+            "ömer": "5 YIL. BEŞ YIL. Hâlâ Ömer’i soruyorsun. O çocuk seni nankörlükle suçladı, başkasına geçti, hâlâ gönderme yapıyor. Seni unutamazmış... evet çünkü senin gibi enayiyi bir daha bulamaz 😭💔",
+            "ömere dönmeli miyim": "DÖNME. Dönersen bu fal sitesini yakarım. 5 yılın cefasını sen çektin, sefasını başkası sürüyor. Sen diş hekimi olacaksın, o hâlâ aynı bok. Bırak çürüsün kendi halinde 🦷✨",
+
+            // Berat & çevresi
+            "berat": "Baban hapis, kendisi bıçaklı, ‘beni bu hayattan kurtar’ diyor... Nisa sen doktor olucan, o hapiste yatacak. Ruh eşiymiş... ruh eşi hapiste olur mu kızım 😂🔪",
+            "gizli numara": "Emir’in arkadaşları kesin. Dalga geçiyorlar seninle. Bir daha ararlarsa ‘isminizi söyleyin savcılığa vericem’ de, telefon kapanır hemen 😏📞",
+
+            // Sağlık & bel ağrısı
+            "bel": "Kızım iğneyi bırakma, doktora git. Bel fıtığın var, dans mı edicen hâlâ? Ağrı kesiciyle idare etme, çarşamba randevun var git 🩺💉",
+            "ağrı": "Namaz kılarken ölüyorsun, hâlâ iğneyi erteleyecen mi? Pazartesiye kadar dayanamazsan git, yoksa yılbaşını yatakta geçirirsin 🤕",
+
+            // Kariyer & YKS
+            "yks": "Mezuna kaldın diye ağlama. AYT fen zaten iyi, sadece mat yap. 90 bin yaparsın bu sene, diş hekimliği gelir. Emir Ömer Berat üçlüsü seni engelliyo, telefonu bırak çalış 📚🦷",
+            "diş hekimi": "OLACAKSIN. Nokta. Bu sene netlerin yeter, yığılma var diye pes etme. Seneye beyaz önlükle gezecen, onlar hâlâ aynı bokun içinde 😏🦷",
+
+            // At binme & Çorum
+            "at": "Çorum’da yeni kulüp açılmış, 17 bin 2 haftalık paket... Kızım sen önce YKS’ni kazan, atı sonra alırız sana 🐎💸",
+            "çorum": "Kent Park Suriyelilerle dolmuş, hava sıcak, sen hâlâ portable klima peşindesin. Yaz bitmeden Bodrum’a kaç, kurtul bu şehirden 😅",
+
+            // Genel iğneleyici cevaplar
+            "aşk": "Aşk mı? Senin aşkın takıntı kızım. 5 yıl Ömer, şimdi Emir... Bırak bu işleri, önce kendini sev. Kimse sana hakettiğin değeri vermiyor çünkü sen vermiyorsun 💔",
+            "sevgili": "Sevgilin olsun istiyorsun ama gelenler hep aynı paket: yalan, ego, gizli numara. Biraz standart koy, yoksa 30 yaşında hâlâ aynı muhabbet 😂",
+            "niye böyle": "Çünkü sen enayisin prenses. Herkese ikinci, üçüncü, kırkıncı şansı veriyorsun. Biraz sert ol, biraz bencil ol. Bak gör dünyan nasıl düzeliyor 👑",
+
+            // Random eğlenceli cevaplar
+            "": "Sorun yazmadın ki boş boş bakıyorsun ekrana, klasik Nisa 😭",
+            "faruk": "O çocuk seni benden iyi tanıyor, dinle biraz onu. ‘Yazma, sil, engelle’ diyor haklı 😏",
+            "fal": "Falın tutacak ama sen yine bildiğini okuyacan, değil mi? Klasik Nisa hareketleri 🤦‍♀️💅"
         };
 
-        // ☕ Havuzdaki 40 (veya daha fazla/az) rastgele fal metniniz
-        const generalFortunes = [
-            "Güzel günler seni bekliyor, sabırlı ol. Yakın çevrenden alacağın destekle büyük bir engeli aşacaksın.",
-            "Bir yolculuk görünüyor. Bu yolculuk sadece fiziksel değil, aynı zamanda kişisel bir keşif yolculuğu olacak.",
-            "Haneye bir misafir gelebilir. Bu kişi beraberinde neşe ve bereket getirecek.",
-            "Kısa bir süre içinde hayatını değiştirecek önemli bir karar alman gerekebilir. İç sesini dinle.",
-            "Umutların yeşeriyor. Bir dileğin gerçekleşmesi için doğru zamandasın, enerjini buna odakla.",
-            "Sana dargın olan bir dostunla barışma fırsatı doğacak. Bu, sana huzur getirecek.",
-            "Yakın zamanda hiç ummadığın bir yerden eline toplu bir miktar para geçebilir.",
-            "Aşk hayatında yeni bir sayfa açılıyor. Eğer yalnızsan, çok özel biriyle tanışacaksın.",
-            "Gizli bir hayranın var. Bu kişi sana duygularını açmak için doğru anı kolluyor.",
-            "Üzerindeki baskı azalıyor. Bir süredir seni yoran bir konu nihayet çözüme kavuşacak.",
-            // Buraya 10'dan 40'a tamamlayacak şekilde kendi metinlerinizi ekleyin.
-        ];
+        function bak() {
+            let soru = document.getElementById("question").value.toLowerCase().trim();
+            let cevap = "Hmm bilmiyorum ya... bir daha sor 🤔";
 
-        function getFortune() {
-            const userInput = document.getElementById('userInput').value.trim().toLowerCase();
-            const resultDiv = document.getElementById('result');
-            resultDiv.textContent = "Falınızı yorumluyorum...";
-
-            if (userInput === "") {
-                resultDiv.textContent = "Lütfen fal bakılmasını istediğiniz konuyu yazın.";
-                return;
-            }
-
-            let foundSpecialFortune = false;
-
-            // 1. Özel Metin Kontrolü
-            for (const keyword in specialFortunes) {
-                // Kullanıcı metni anahtar kelimeyi içeriyor mu?
-                if (userInput.includes(keyword)) {
-                    resultDiv.textContent = specialFortunes[keyword];
-                    foundSpecialFortune = true;
-                    break; 
+            for (let anahtar in cevaplar) {
+                if (soru.includes(anahtar)) {
+                    cevap = cevaplar[anahtar];
+                    break;
                 }
             }
 
-            // 2. Rastgele Metin Kontrolü (Özel metin bulunamazsa)
-            if (!foundSpecialFortune) {
-                const randomIndex = Math.floor(Math.random() * generalFortunes.length);
-                resultDiv.textContent = generalFortunes[randomIndex];
+            // Eğer tam eşleşme yoksa biraz random iğneleyici
+            if (cevap === "Hmm bilmiyorum ya... bir daha sor 🤔") {
+                const rastgele = [
+                    "Kızım yine aynı terane... uyan artık saat kaç oldu ⏰",
+                    "Bu soruyu 40 kere sordun, cevap hâlâ aynı: BIRAK BU İŞLERİ 🚩",
+                    "Yarın yine sorucan biliyorum, çünkü sen değişmiyorsun 😭💅",
+                    "Diş hekimliği kazan, gerisi boş kızım 🦷✨",
+                    "Emir mi Ömer mi Berat mı... hepsi aynı bokun soyu, yeni sayfa aç 📖"
+                ];
+                cevap = rastgele[Math.floor(Math.random() * rastgele.length)];
             }
+
+            document.getElementById("result").innerHTML = cevap + "<br><br><span class='emoji'>🔮✨</span>";
         }
+
+        // Enter tuşuyla da çalışsın
+        document.getElementById("question").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                bak();
+            }
+        });
     </script>
 </body>
 </html>
