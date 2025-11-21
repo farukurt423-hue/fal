@@ -120,8 +120,8 @@ const nisa = [
         "Emir mi yine? Kızım o seni kankası gibi görüyo, sen hâlâ köpeğisin. YAZMA.",
         "Gizli numara onun işi, dalga geçiyorlar seninle. Uyan Nisa,",
         "Sipastik dedi diye mi hâlâ peşindesin? Yılın enayisi seçildin.",
-        "Emir seni salağın teki olarak görüyor kendine gel.", 
-     "Arabada kızla gezerken sana 'kanki' diyo. Daha peşinden koşuyorsun?",
+“Emir seni salağın teki olarak görüyor kendine gel”, 
+        "Arabada kızla gezerken sana 'kanki' diyo. Daha peşinden koşuyorsun?",
         "Emir seni seviyo sanıyosun? Seviyosa niye başkasıyla story atıyo? Sen onun için bir hiçsin"
     ]},
     // 2. ÖMER
@@ -241,16 +241,13 @@ function fal() {
             }
         }
         cevap = yeter[Math.floor(Math.random() * yeter.length)];
-    }document.getElementById("sonuc").innerHTML = "FALIN ŞÖYLE DİYOR:<br><br><strong>" + cevap + "</strong><br><br>GERÇEK confetti({
-      
-    });
+    }
 
+    document.getElementById("sonuc").innerHTML = "FALIN ŞÖYLE DİYOR:<br><br><strong>" + cevap + "</strong><br><br>GERÇEK BU.";
+}
 
 document.getElementById("soru").addEventListener("keyup", function(e) {
     if (e.key === "Enter") fal();
-document.getElementById("soru").addEventListener("keyup", function(e) {
-    if (e.key === "Enter") {
-        fal();
 });
 </script>
 </body>
